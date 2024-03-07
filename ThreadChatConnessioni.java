@@ -2,14 +2,14 @@ import java.net.*;
 import java.io.*; 
 
 public class ThreadChatConnessioni implements Runnable{
-    private ThreadGesnetionServizioChat gestoreChat; 
+    private ThreadGestioneServizioChat gestoreChat; 
 
     private Socket client=null;
     private BufferedReader input = null;
     private PrintWriter output = null; 
     Thread me; 
 
-    public ThreadChatConnessioni(ThreadGestionServizioChat gs, Socket cl)
+    public ThreadChatConnessioni(ThreadGestioneServizioChat gs, Socket cl)
     {
         this.gestoreChat = gs; 
         this.client = cl; 

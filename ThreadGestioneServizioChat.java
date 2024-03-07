@@ -4,17 +4,17 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-public class ThreadGestionServizioChat implements Runnable
+public class ThreadGestioneServizioChat implements Runnable
 {
     private int nrMaxConnessioni; 
-    private List<E> lista; 
+    private List lista; 
 
     private ThreadChatConnessioni[] listaConnessioni; 
 
     Thread me; 
 
     private ServerSocket serverChat; 
-    public ThreadGestionServizioChat(int nr, List lis)
+    public ThreadGestioneServizioChat(int nr, List lis)
     {
         this.nrMaxConnessioni = nr-1; 
         this.lista = lis; 

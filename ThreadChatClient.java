@@ -7,9 +7,9 @@ public class ThreadChatClient implements Runnable {
     private List lista; 
     Thread me; 
     
-    Private Socket client; 
-    Private BufferedReader input = null; 
-    PrintWriter input = null; 
+    private Socket client; 
+    private BufferedReader input = null; 
+    private PrintWriter output = null; 
 
     public ThreadChatClient(List lis, String ipServer, int porta)
     {
