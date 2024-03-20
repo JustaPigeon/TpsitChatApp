@@ -1,7 +1,5 @@
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.List;
-
+import java.awt.List;
+import java.net.*;
 import javax.swing.JOptionPane;
 
 public class ThreadGestioneServizioChat implements Runnable
@@ -18,6 +16,7 @@ public class ThreadGestioneServizioChat implements Runnable
     {
         this.nrMaxConnessioni = nr-1; 
         this.lista = lis; 
+        this.listaConnessioni = new ThreadChatConnessioni[this.nrMaxConnessioni];
         me = new Thread(this); 
         me.start();
     }
@@ -26,7 +25,7 @@ public class ThreadGestioneServizioChat implements Runnable
     {
         boolean continua = true; 
         try{
-            serverChat=new ServerSocket(6789); 
+            serverChat=new ServerSocket(7013); 
         }catch(Exception e)
         {
             JOptionPane.showMessageDialog(null, "Impossibile instanziare il server!");
@@ -42,6 +41,7 @@ public class ThreadGestioneServizioChat implements Runnable
                 }
                 serverChat.close(); 
             }catch(Exception e){
+                e.printStackTrace();
                 JOptionPane.showMessageDialog(null, "Impossibile instanziare il server chat!");
             }
 
