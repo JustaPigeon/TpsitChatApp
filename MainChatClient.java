@@ -1,5 +1,5 @@
 public class MainChatClient {
-    public void main(String args[])
+    public static void main(String args[])
     {
         ChatClient chat = new ChatClient();
     }

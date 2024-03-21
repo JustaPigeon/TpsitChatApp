@@ -25,7 +25,7 @@ public class ThreadGestioneServizioChat implements Runnable
     {
         boolean continua = true; 
         try{
-            serverChat=new ServerSocket(7013); 
+            serverChat=new ServerSocket(7011); 
         }catch(Exception e)
         {
             JOptionPane.showMessageDialog(null, "Impossibile instanziare il server!");

@@ -33,7 +33,7 @@ class PannelloChatClient extends JPanel implements ActionListener
   private JTextField textNuovo;
   private ThreadChatClient gestioneServizio;
   private String ipServer="localhost";
-  private int porta      =7013;
+  private int porta      =7011;
   
   private int cred  =  34;
   private int cgreen= 139;
