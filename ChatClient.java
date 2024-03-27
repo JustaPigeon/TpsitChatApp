@@ -99,7 +99,6 @@ class PannelloChatClient extends JPanel implements ActionListener
 
   public void connettiAlServer()
   {
-	actionPerformed(null);
 	//instanzio il Thread per le connessioni
 	gestioneServizio = new ThreadChatClient(lista,ipServer,porta);
   }
@@ -108,7 +107,7 @@ class PannelloChatClient extends JPanel implements ActionListener
      * Gestisce l'evento sul pulsante d'invio che inoltra il messaggio.
      * @param e evento del pulsante.
      */
-	
+
   public void actionPerformed(ActionEvent e)
   {
 	String bottone = e.getActionCommand();
