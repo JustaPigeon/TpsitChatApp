@@ -4,6 +4,10 @@ import javax.swing.*;
 
 public class ChatClient extends JFrame
 {
+	/**
+	 * Costruttore della classe ChatClient
+	 */
+
   public ChatClient()
   {
 	super("Chat Client");
@@ -26,6 +30,10 @@ public class ChatClient extends JFrame
 	this.setVisible(true);			
   }	
 }
+
+ 	/**
+     * Costruttore della classe che si occupa di creare l'interfaccia grafica del clienti.
+     */
 
 class PannelloChatClient extends JPanel implements ActionListener
 {
@@ -85,13 +93,22 @@ class PannelloChatClient extends JPanel implements ActionListener
 	connettiAlServer();
   }//fine costruttore classe PannelloChat
 
-	
+  /**
+   * Connette al server a cui fai capo la chat.
+   */
+
   public void connettiAlServer()
   {
+	actionPerformed(null);
 	//instanzio il Thread per le connessioni
 	gestioneServizio = new ThreadChatClient(lista,ipServer,porta);
   }
 
+  	/**
+     * Gestisce l'evento sul pulsante d'invio che inoltra il messaggio.
+     * @param e evento del pulsante.
+     */
+	
   public void actionPerformed(ActionEvent e)
   {
 	String bottone = e.getActionCommand();

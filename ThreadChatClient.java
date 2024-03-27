@@ -10,7 +10,12 @@ public class ThreadChatClient implements Runnable {
     private Socket client; 
     private BufferedReader input = null; 
     private PrintWriter output = null; 
-
+    /**
+     * Costruttore della classe ThreadChatClient.
+     * @param lis Lista delle connessioni.
+     * @param ipServer IP del server a cui facciamo riferimento.
+     * @param porta Numero della porta su cui andremo a lavorare.
+     */
     public ThreadChatClient(List lis, String ipServer, int porta)
     {
         this.lista = lis; 
@@ -24,6 +29,10 @@ public class ThreadChatClient implements Runnable {
         me = new Thread(this); 
         me.start();
     }
+
+    /**
+     * Il metodo Run() rimane in attesa che l'utente scriva un messaggio, quindi richiama il metodo del server per inviare il messaggio ai client.
+     */
 
     public void run()
     {
@@ -43,7 +52,10 @@ public class ThreadChatClient implements Runnable {
             }
         }
     }
-
+    /**
+     * Invia il messaggio ad un singolo client.
+     * @param messaggio stringa del messaggio da inviare.
+     */
     public void spedisciMessaggioChat(String messaggio)
     {
         try{

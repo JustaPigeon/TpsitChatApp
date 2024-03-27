@@ -2,9 +2,11 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-//package com.mycompany.chatserverClient;
-
 public class ChatServer extends JFrame {
+
+    /**
+     * Costruttore della classe ChatServer
+     */
 
     public ChatServer()
     {
@@ -20,11 +22,15 @@ public class ChatServer extends JFrame {
 
 }
 
+
 class PannelloChatServer extends JPanel implements ActionListener{
     private ThreadGestioneServizioChat gestioneServizio;
     private JTextField textNuovo;
     private List lista;
 
+    /**
+     * Costruttore della classe che si occupa di creare l'interfaccia grafica del server.
+     */
     public PannelloChatServer() {
         super();
         this.setBackground(new Color(50,100,255));
@@ -59,10 +65,19 @@ class PannelloChatServer extends JPanel implements ActionListener{
         connetti();
     }
 
+    /**
+     * Avviamo il server e predisponiamo la lista delle possibili connessioni.
+     */
+
     public void connetti()
     {
         gestioneServizio = new ThreadGestioneServizioChat(10, lista);
     }
+
+    /**
+     * Gestisce l'evento sul pulsante d'invio che inoltra il messaggio.
+     * @param e evento del pulsante.
+     */
 
     public void actionPerformed(ActionEvent e)
     {

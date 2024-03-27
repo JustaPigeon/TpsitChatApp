@@ -9,6 +9,12 @@ public class ThreadChatConnessioni implements Runnable{
     private PrintWriter output = null; 
     Thread me; 
 
+        /**
+     * Il costruttore crea e inizializza lo stream di input e output, il gestoreChat ed il Socket client. 
+     * @param gs thread che gestisce la chat
+     * @param cl socket che contiene la connessione con il client
+     */
+
     public ThreadChatConnessioni(ThreadGestioneServizioChat gs, Socket cl)
     {
         this.gestoreChat = gs; 
@@ -24,6 +30,9 @@ public class ThreadChatConnessioni implements Runnable{
         me.start(); 
     }
 
+    /**
+     * Run() aspetta finché la stringa non cambia valore, una volta cambiato valore, viene inviato il messaggio.
+     */
     public void run()
     {
         while (true) {
@@ -42,7 +51,10 @@ public class ThreadChatConnessioni implements Runnable{
         }
     }
 
-
+    /**
+     * Invia il messaggio ad un singolo client.
+     * @param messaggio stringa del messaggio da inviare.
+     */
     public void spedisciMessaggioChat(String messaggio)
     {
         try{

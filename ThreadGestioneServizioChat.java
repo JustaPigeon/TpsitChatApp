@@ -12,6 +12,14 @@ public class ThreadGestioneServizioChat implements Runnable
     Thread me; 
 
     private ServerSocket serverChat; 
+
+    /**
+     * Il Metodo Run() si occupa di ricevere le connessioni dei client: al costruttore passiamo come paramentro il numero massimo di connessioni e la lista dei messaggi.
+     * @param nr numero connessioni
+     * @param lis lista messaggi
+     */
+
+
     public ThreadGestioneServizioChat(int nr, List lis)
     {
         this.nrMaxConnessioni = nr-1; 
@@ -20,6 +28,10 @@ public class ThreadGestioneServizioChat implements Runnable
         me = new Thread(this); 
         me.start();
     }
+
+    /**
+     * Run() si occupa di ricevere le connessioni e crea un socket sulla porta 6789.
+    */
 
     public void run()
     {
@@ -47,6 +59,11 @@ public class ThreadGestioneServizioChat implements Runnable
 
         }
     }
+
+    /**
+     * Si occupa di inviare un messaggio a tutti i client e memorizza l'elenco delle connessioni nell'array listaConnessioni. 
+     * @param mex stringa del messaggio
+     */
 
     public void spedisciMessaggio(String mex)
     {
